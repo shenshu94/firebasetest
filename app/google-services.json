@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "831051181777",
+    "firebase_url": "https://eld-app-e19e6.firebaseio.com",
+    "project_id": "eld-app-e19e6",
+    "storage_bucket": "eld-app-e19e6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:831051181777:android:ddadacf399255413121ff0",
+        "android_client_info": {
+          "package_name": "com.example.myfirebaseapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "831051181777-8tusknkf5u08a1d2o0l111egao1637ds.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.myfirebaseapp",
+            "certificate_hash": "b19b10800715ecd7263b5bde0ec6d68e232dc8c1"
+          }
+        },
+        {
+          "client_id": "831051181777-qaf5ok372772b9u7hedhr0g535b0oh2g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCclIWpJIjdXuW6NTikk_wjyRohcZV__2w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "831051181777-qaf5ok372772b9u7hedhr0g535b0oh2g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
