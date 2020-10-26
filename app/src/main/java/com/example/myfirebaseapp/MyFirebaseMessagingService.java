@@ -12,6 +12,8 @@ import com.google.firebase.messaging.RemoteMessage;
 public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
     public static final String TOKEN_BROADCAST = "token_refreshed";
+    public static final String MSG_BROADCAST = "MSG_BROADCAST";
+    public static final String MSG_READING = "MSG_READING";
 
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
@@ -38,6 +40,9 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         // Check if message contains a notification payload.
         if (remoteMessage.getNotification() != null) {
             Log.d("received", "Message Notification Body: " + remoteMessage.getNotification().getBody());
+            Intent intent = new Intent(MSG_BROADCAST);
+            intent.putExtra(MSG_READING, remoteMessage.getNotification().getBody());
+            getApplicationContext().sendBroadcast(intent);
         }
 
         // Also if you intend on generating your own notifications as a result of a received FCM

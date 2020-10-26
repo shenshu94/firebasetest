@@ -24,11 +24,18 @@ public class MainActivity extends AppCompatActivity {
         broadcastReceiver = new BroadcastReceiver() {
             @Override
             public void onReceive(Context context, Intent intent) {
-                tvToken.setText(SharedPrefManager.getInstance(MainActivity.this).getToken());
+                if (intent.getAction() != null && intent.getAction().equals(MyFirebaseMessagingService.MSG_BROADCAST)) {
+                    tvToken.setText("New Message: " + intent.getStringExtra(MyFirebaseMessagingService.MSG_READING));
+                } else {
+                    tvToken.setText(SharedPrefManager.getInstance(MainActivity.this).getToken());
+                }
             }
         };
 
-        registerReceiver(broadcastReceiver, new IntentFilter(MyFirebaseMessagingService.TOKEN_BROADCAST));
+        IntentFilter filter = new IntentFilter();
+        filter.addAction(MyFirebaseMessagingService.TOKEN_BROADCAST);
+        filter.addAction(MyFirebaseMessagingService.MSG_BROADCAST);
+        registerReceiver(broadcastReceiver, filter);
 
 
 
